@@ -1,4 +1,6 @@
 const THEME_KEY = 'preferred-theme';
+const PROJECTS_ENDPOINT = 'data/projects.json';
+let projectsData = [];
 
 const getStoredTheme = () => localStorage.getItem(THEME_KEY);
 const getSystemTheme = () => (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -58,22 +60,6 @@ function initNavigation() {
   });
 }
 
-function initProjectToggles() {
-  const buttons = document.querySelectorAll('.read-more');
-  buttons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.dataset.target;
-      const description = targetId ? document.getElementById(targetId) : null;
-      const card = btn.closest('.project-card');
-      if (!description || !card) return;
-
-      const expanded = card.classList.toggle('expanded');
-      btn.setAttribute('aria-expanded', String(expanded));
-      btn.textContent = expanded ? 'Réduire' : 'En savoir plus';
-    });
-  });
-}
-
 function initScrollAnimations() {
   const animated = document.querySelectorAll('[data-animate]');
   if (!('IntersectionObserver' in window)) {
@@ -96,13 +82,157 @@ function initScrollAnimations() {
   animated.forEach((el) => observer.observe(el));
 }
 
+function toggleDescription(button) {
+  const targetId = button.dataset.target;
+  const description = targetId ? document.getElementById(targetId) : null;
+  const card = button.closest('.project-card');
+  if (!description || !card) return;
+
+  const expanded = card.classList.toggle('expanded');
+  button.setAttribute('aria-expanded', String(expanded));
+  button.textContent = expanded ? 'Réduire' : 'En savoir plus';
+}
+
+function createProjectCard(project) {
+  const article = document.createElement('article');
+  article.className = 'project-card card theme-card flex flex-col gap-2';
+
+  const header = document.createElement('div');
+  header.className = 'project-header flex items-center justify-between gap-2';
+
+  const info = document.createElement('div');
+  const title = document.createElement('p');
+  title.className = 'card-title';
+  title.textContent = project.title;
+  const subtitle = document.createElement('p');
+  subtitle.className = 'card-subtitle text-muted';
+  subtitle.textContent = project.subtitle;
+  info.append(title, subtitle);
+
+  const tag = document.createElement('span');
+  tag.className = 'tag';
+  tag.textContent = project.type;
+
+  header.append(info, tag);
+
+  const thumbnail = document.createElement('div');
+  thumbnail.className = 'project-thumb';
+  const img = document.createElement('img');
+  img.src = project.image;
+  img.alt = project.title;
+  thumbnail.appendChild(img);
+
+  const excerpt = document.createElement('p');
+  excerpt.className = 'project-excerpt text-muted';
+  excerpt.textContent = project.excerpt;
+
+  const description = document.createElement('div');
+  description.className = 'project-description';
+  description.id = `${project.id}-desc`;
+  const descriptionText = document.createElement('p');
+  descriptionText.textContent = project.description;
+  description.appendChild(descriptionText);
+
+  const button = document.createElement('button');
+  button.className = 'read-more';
+  button.type = 'button';
+  button.dataset.target = description.id;
+  button.setAttribute('aria-expanded', 'false');
+  button.textContent = 'En savoir plus';
+  button.addEventListener('click', () => toggleDescription(button));
+
+  article.append(header, thumbnail, excerpt, description, button);
+  return article;
+}
+
+function renderProjects(list) {
+  const container = document.querySelector('.projects-grid');
+  const empty = document.querySelector('.projects-empty');
+  if (!container || !empty) return;
+
+  container.innerHTML = '';
+  if (!list.length) {
+    empty.hidden = false;
+    return;
+  }
+
+  empty.hidden = true;
+  list.forEach((project) => {
+    const card = createProjectCard(project);
+    container.appendChild(card);
+  });
+}
+
+function updateTypeOptions(types) {
+  const select = document.getElementById('project-filter');
+  if (!select) return;
+  const uniqueTypes = Array.from(new Set(types));
+  uniqueTypes.forEach((type) => {
+    const option = document.createElement('option');
+    option.value = type;
+    option.textContent = type;
+    select.appendChild(option);
+  });
+}
+
+function filterProjects() {
+  const searchInput = document.getElementById('project-search');
+  const typeSelect = document.getElementById('project-filter');
+  const term = searchInput?.value.trim().toLowerCase() || '';
+  const selectedType = typeSelect?.value || 'all';
+
+  const filtered = projectsData.filter((project) => {
+    const matchesType = selectedType === 'all' || project.type === selectedType;
+    const haystack = `${project.title} ${project.excerpt} ${project.description} ${project.type}`.toLowerCase();
+    const matchesText = haystack.includes(term);
+    return matchesType && matchesText;
+  });
+
+  renderProjects(filtered);
+}
+
+async function loadProjects() {
+  try {
+    const response = await fetch(PROJECTS_ENDPOINT);
+    if (!response.ok) {
+      throw new Error('Impossible de charger les projets');
+    }
+    const data = await response.json();
+    projectsData = Array.isArray(data) ? data : data.projects || [];
+    if (!projectsData.length) {
+      renderProjects([]);
+      return;
+    }
+    updateTypeOptions(projectsData.map((project) => project.type));
+    filterProjects();
+  } catch (error) {
+    const empty = document.querySelector('.projects-empty');
+    if (empty) {
+      empty.hidden = false;
+      empty.textContent = 'Erreur lors du chargement des projets.';
+    }
+  }
+}
+
+function initProjectsFilters() {
+  const searchInput = document.getElementById('project-search');
+  const typeSelect = document.getElementById('project-filter');
+  searchInput?.addEventListener('input', filterProjects);
+  typeSelect?.addEventListener('change', filterProjects);
+}
+
+function initProjectsSection() {
+  initProjectsFilters();
+  loadProjects();
+}
+
 function initContactForm() {
   const form = document.querySelector('.contact-form');
   const feedback = document.querySelector('.form-feedback');
   form?.addEventListener('submit', (event) => {
     event.preventDefault();
     if (feedback) {
-      feedback.textContent = 'Merci ! Ce formulaire est une simulation : aucun message réel n\'a été envoyé.';
+      feedback.textContent = "Merci ! Ce formulaire est une simulation : aucun message réel n'a été envoyé.";
     }
   });
 }
@@ -110,7 +240,7 @@ function initContactForm() {
 window.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   initNavigation();
-  initProjectToggles();
+  initProjectsSection();
   initScrollAnimations();
   initContactForm();
 });

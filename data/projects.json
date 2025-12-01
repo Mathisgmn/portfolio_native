@@ -1,0 +1,47 @@
+[
+  {
+    "id": "project-landing",
+    "title": "Landing minimaliste",
+    "subtitle": "Site vitrine produit",
+    "type": "Site vitrine",
+    "excerpt": "Une page claire pour valider un message et récolter des contacts.",
+    "description": "Intégration responsive, score Lighthouse > 95, formulaire connecté à un endpoint statique et analytics prêts.",
+    "image": "assets/project-1.svg"
+  },
+  {
+    "id": "project-dashboard",
+    "title": "Dashboard métriques",
+    "subtitle": "Application web",
+    "type": "Application web",
+    "excerpt": "Visualisation rapide des indicateurs clés avec filtres simples.",
+    "description": "Modules découpés, appels API regroupés, interactions clavier et mode sombre natif pour une adoption fluide.",
+    "image": "assets/project-2.svg"
+  },
+  {
+    "id": "project-school",
+    "title": "Projet d'école collaboratif",
+    "subtitle": "Gestion d'équipe",
+    "type": "Projet d'école",
+    "excerpt": "Organisation de tâches et suivi d'avancement pour un hackathon.",
+    "description": "Planification en sprints courts, documentation condensée et validation continue avec l'équipe pédagogique.",
+    "image": "assets/project-3.svg"
+  },
+  {
+    "id": "project-audit",
+    "title": "Audit performance",
+    "subtitle": "Analyse technique",
+    "type": "Audit",
+    "excerpt": "Rapport ciblé pour réduire le temps de chargement d'un parcours e-commerce.",
+    "description": "Tests Lighthouse, compression des assets, simplification des scripts et recommandations actionnables en moins de 10 étapes.",
+    "image": "assets/project-4.svg"
+  },
+  {
+    "id": "project-onboarding",
+    "title": "Assistant d'onboarding",
+    "subtitle": "Guides interactifs",
+    "type": "Application web",
+    "excerpt": "Guides étape par étape pour accélérer l'activation utilisateur.",
+    "description": "Micro-contenus contextualisés, sauvegarde locale des préférences et métriques de complétion visibles en temps réel.",
+    "image": "assets/project-5.svg"
+  }
+]

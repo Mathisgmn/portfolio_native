@@ -167,6 +167,18 @@ img {
   margin: 0;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -212,6 +224,21 @@ img {
   align-items: center;
 }
 
+.project-thumb {
+  border-radius: 0.65rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg, rgba(110, 82, 247, 0.15), rgba(120, 255, 203, 0.2));
+  aspect-ratio: 4 / 3;
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .project-excerpt {
   margin: 0;
 }
@@ -247,6 +274,28 @@ img {
   font-weight: 600;
   cursor: pointer;
   padding: 0;
+}
+
+.project-filters {
+  margin-bottom: 1rem;
+}
+
+.input-wrapper,
+.select-wrapper {
+  display: block;
+}
+
+.projects-empty {
+  margin-top: 1rem;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .contact-form {

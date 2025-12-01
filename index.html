@@ -24,9 +24,10 @@
       <nav id="main-menu" class="main-nav" aria-label="Navigation principale">
         <ul class="flex flex-col gap-1 px-1 pb-2 pt-1 md:flex-row md:gap-3 md:p-0">
           <li><a class="nav-link" href="#hero" data-scroll-to>Accueil</a></li>
-          <li><a class="nav-link" href="#about" data-scroll-to>A propos</a></li>
-          <li><a class="nav-link" href="#skills" data-scroll-to>Compétences</a></li>
           <li><a class="nav-link" href="#projects" data-scroll-to>Projets</a></li>
+          <li><a class="nav-link" href="#skills" data-scroll-to>Compétences</a></li>
+          <li><a class="nav-link" href="#services" data-scroll-to>Services</a></li>
+          <li><a class="nav-link" href="#about" data-scroll-to>À propos</a></li>
           <li><a class="nav-link" href="#contact" data-scroll-to>Contact</a></li>
         </ul>
       </nav>
@@ -37,9 +38,9 @@
     <section id="hero" class="py-5" aria-label="Introduction">
       <div class="container grid gap-3 md:grid-cols-2 items-center">
         <div class="flex flex-col gap-2" data-animate>
-          <p class="eyebrow text-muted">Développeur Front-end</p>
-          <h1 class="hero-title">Je conçois des expériences web élégantes et performantes.</h1>
-          <p class="lead text-muted">Passionné par les interfaces accessibles, je crée des produits numériques immersifs en JavaScript natif.</p>
+          <p class="eyebrow text-muted">Alex Martin · Développeur Frontend</p>
+          <h1 class="hero-title">Je crée des interfaces web sobres, accessibles et prêtes pour la production.</h1>
+          <p class="lead text-muted">Je conçois des parcours clairs, optimise les performances et reste concentré sur ce qui compte : livrer vite sans superflu.</p>
           <div class="flex flex-wrap gap-2">
             <a class="btn btn-primary" href="#projects" data-scroll-to>Voir mes projets</a>
             <a class="btn btn-outline" href="#contact" data-scroll-to>Me contacter</a>
@@ -48,33 +49,13 @@
         <div class="card theme-card" data-animate>
           <div class="flex flex-col gap-2">
             <p class="card-title">Disponible dès maintenant</p>
-            <p class="text-muted">Basé à Lyon, ouvert au full-remote. J'aime transformer les idées en produits clairs et élégants.</p>
+            <p class="text-muted">Basé à Lyon, ouvert au full-remote. J'aide les équipes produit à passer d'une idée à un livrable testé en quelques jours.</p>
             <ul class="badge-list flex flex-wrap gap-1">
-              <li>SPA natives</li>
+              <li>HTML / CSS / JS natif</li>
               <li>Accessibilité</li>
-              <li>Animations maîtrisées</li>
+              <li>Performance web</li>
             </ul>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="py-4" aria-labelledby="about-title">
-      <div class="container">
-        <div class="section-heading flex flex-col gap-1" data-animate>
-          <p class="eyebrow text-muted">A propos</p>
-          <h2 id="about-title">Construire des expériences utiles</h2>
-          <p class="text-muted">Mon approche est centrée sur l'utilisateur : maquettes accessibles, interactions fluides et performances mesurables.</p>
-        </div>
-        <div class="grid gap-2 md:grid-cols-2" data-animate>
-          <article class="card theme-card h-full flex flex-col gap-1">
-            <h3>Philosophie</h3>
-            <p class="text-muted">Chaque fonctionnalité est pensée pour avoir un impact clair. J'écris un code maintenable et documenté afin de faciliter les évolutions.</p>
-          </article>
-          <article class="card theme-card h-full flex flex-col gap-1">
-            <h3>Stack de prédilection</h3>
-            <p class="text-muted">JavaScript natif, HTML sémantique et CSS modulaire. J'évite les dépendances inutiles et privilégie la maîtrise des fondamentaux.</p>
-          </article>
         </div>
       </div>
     </section>
@@ -84,20 +65,20 @@
         <div class="section-heading flex flex-col gap-1" data-animate>
           <p class="eyebrow text-muted">Compétences</p>
           <h2 id="skills-title">Une boîte à outils complète</h2>
-          <p class="text-muted">De la conception à la mise en production, j'orchestré des parcours utilisateurs cohérents et responsives.</p>
+          <p class="text-muted">De la maquette à la mise en ligne, j'utilise uniquement les briques nécessaires pour livrer vite.</p>
         </div>
         <div class="grid gap-2 md:grid-cols-3">
           <article class="card theme-card h-full flex flex-col gap-1" data-animate>
-            <h3>Accessibilité</h3>
-            <p class="text-muted">Navigation clavier, contrastes soignés et hiérarchies logiques pour des interfaces inclusives.</p>
+            <h3>HTML &amp; CSS</h3>
+            <p class="text-muted">Structure sémantique, mise en page responsive, composants accessibles et design système léger.</p>
           </article>
           <article class="card theme-card h-full flex flex-col gap-1" data-animate>
-            <h3>Performance</h3>
-            <p class="text-muted">Optimisation des assets, lazy loading ciblé et animations à 60 fps grâce à des scripts légers.</p>
+            <h3>JavaScript</h3>
+            <p class="text-muted">Apps natives, appels API maîtrisés, gestion d'état simple et animations sans dépendances inutiles.</p>
           </article>
           <article class="card theme-card h-full flex flex-col gap-1" data-animate>
-            <h3>Design Systems</h3>
-            <p class="text-muted">Création de bibliothèques réutilisables et cohérentes pour accélérer la livraison de nouveaux modules.</p>
+            <h3>Outils</h3>
+            <p class="text-muted">Git, audits Lighthouse, SEO technique, automatisation de build minimale pour rester concentré sur le produit.</p>
           </article>
         </div>
       </div>
@@ -107,53 +88,69 @@
       <div class="container">
         <div class="section-heading flex flex-col gap-1" data-animate>
           <p class="eyebrow text-muted">Réalisations</p>
-          <h2 id="projects-title">Des projets concrets</h2>
-          <p class="text-muted">Chaque carte contient un résumé court. Cliquez sur « en savoir plus » pour afficher les détails du projet.</p>
+          <h2 id="projects-title">Projets chargés dynamiquement</h2>
+          <p class="text-muted">Recherche textuelle, filtre par type et détails affichés à la demande. Les données arrivent via un endpoint JSON statique.</p>
+        </div>
+        <div class="project-filters grid gap-1 md:grid-cols-[2fr_1fr]" data-animate>
+          <label class="input-wrapper" for="project-search">
+            <span class="sr-only">Rechercher un projet</span>
+            <input id="project-search" type="search" placeholder="Rechercher par mots-clés" autocomplete="off" />
+          </label>
+          <label class="select-wrapper" for="project-filter">
+            <span class="sr-only">Filtrer par type</span>
+            <select id="project-filter" aria-label="Filtrer par type de projet">
+              <option value="all">Tous les types</option>
+            </select>
+          </label>
+        </div>
+        <div class="projects-grid grid gap-2 md:grid-cols-3" data-animate aria-live="polite"></div>
+        <p class="projects-empty text-muted" hidden>Aucun projet ne correspond à ces critères.</p>
+      </div>
+    </section>
+
+    <section id="services" class="py-4" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-heading flex flex-col gap-1" data-animate>
+          <p class="eyebrow text-muted">Services</p>
+          <h2 id="services-title">Prestations rapides et ciblées</h2>
+          <p class="text-muted">Pensées pour des missions freelance courtes ou de l'accompagnement produit.</p>
         </div>
         <div class="grid gap-2 md:grid-cols-3">
-          <article class="project-card card theme-card flex flex-col gap-2" data-animate>
-            <div class="project-header flex items-center justify-between gap-2">
-              <div>
-                <p class="card-title">Plateforme d'événements</p>
-                <p class="card-subtitle text-muted">SPA marketing / réservation</p>
-              </div>
-              <span class="tag">JS Vanilla</span>
-            </div>
-            <p class="project-excerpt text-muted">Landing immersive avec formulaires interactifs et animations douces.</p>
-            <div class="project-description" id="project-1-desc">
-              <p>Architecture modulaire, routing client léger, tracking des conversions et optimisation Core Web Vitals.</p>
-            </div>
-            <button class="read-more" type="button" data-target="project-1-desc" aria-expanded="false">En savoir plus</button>
+          <article class="card theme-card h-full flex flex-col gap-1" data-animate>
+            <h3>Intégration web</h3>
+            <p class="text-muted">Découpage propre, respect des maquettes, accessibilité et tests de base avant livraison.</p>
           </article>
-
-          <article class="project-card card theme-card flex flex-col gap-2" data-animate>
-            <div class="project-header flex items-center justify-between gap-2">
-              <div>
-                <p class="card-title">Dashboard analytique</p>
-                <p class="card-subtitle text-muted">Visualisation temps réel</p>
-              </div>
-              <span class="tag">Design System</span>
-            </div>
-            <p class="project-excerpt text-muted">Cartes synthétiques, filtres dynamiques et theming par utilisateur.</p>
-            <div class="project-description" id="project-2-desc">
-              <p>Interactions clavier complètes, composants réutilisables, micro-interactions pour signaler les mises à jour.</p>
-            </div>
-            <button class="read-more" type="button" data-target="project-2-desc" aria-expanded="false">En savoir plus</button>
+          <article class="card theme-card h-full flex flex-col gap-1" data-animate>
+            <h3>Landing pages</h3>
+            <p class="text-muted">Pages optimisées pour la conversion avec suivi analytics et temps de chargement réduit.</p>
           </article>
+          <article class="card theme-card h-full flex flex-col gap-1" data-animate>
+            <h3>Audits ciblés</h3>
+            <p class="text-muted">Revue performance et accessibilité, recommandations concrètes et plan d'action priorisé.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-          <article class="project-card card theme-card flex flex-col gap-2" data-animate>
-            <div class="project-header flex items-center justify-between gap-2">
-              <div>
-                <p class="card-title">Assistant d'onboarding</p>
-                <p class="card-subtitle text-muted">Guides interactifs</p>
-              </div>
-              <span class="tag">Micro front-end</span>
-            </div>
-            <p class="project-excerpt text-muted">Parcours guidés, feedback utilisateur immédiat et sauvegarde des préférences.</p>
-            <div class="project-description" id="project-3-desc">
-              <p>Intégration multi-applications, support offline léger et personnalisation selon les rôles.</p>
-            </div>
-            <button class="read-more" type="button" data-target="project-3-desc" aria-expanded="false">En savoir plus</button>
+    <section id="about" class="py-4" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-heading flex flex-col gap-1" data-animate>
+          <p class="eyebrow text-muted">À propos</p>
+          <h2 id="about-title">Parcours et objectifs</h2>
+          <p class="text-muted">Profil orienté produit : livrer vite, mesurer, corriger.</p>
+        </div>
+        <div class="grid gap-2 md:grid-cols-3" data-animate>
+          <article class="card theme-card h-full flex flex-col gap-1">
+            <h3>Parcours</h3>
+            <p class="text-muted">Formation développeur web, expériences en startups produit et projets d'école menés en autonomie.</p>
+          </article>
+          <article class="card theme-card h-full flex flex-col gap-1">
+            <h3>Objectifs</h3>
+            <p class="text-muted">Ouvert à l'alternance, au recrutement ou à des missions freelance courtes pour accélérer des livraisons.</p>
+          </article>
+          <article class="card theme-card h-full flex flex-col gap-1">
+            <h3>Façon de travailler</h3>
+            <p class="text-muted">Peu de réunions, beaucoup de prototypes. Documentation concise, feedbacks rapides et tests utilisateurs dès que possible.</p>
           </article>
         </div>
       </div>
@@ -164,7 +161,12 @@
         <div class="section-heading flex flex-col gap-1" data-animate>
           <p class="eyebrow text-muted">Contact</p>
           <h2 id="contact-title">Parlons de votre projet</h2>
-          <p class="text-muted">Le formulaire est volontairement non-fonctionnel pour cette étape. Un message de confirmation simule l'envoi.</p>
+          <p class="text-muted">Coordonnées anonymisées, disponibles pour un échange rapide.</p>
+          <ul class="info-list">
+            <li><strong>Email :</strong> contact.portfolio@exemple.com</li>
+            <li><strong>Réseaux :</strong> <span aria-label="Lien fictif">@alex-dev</span> (profil de démonstration)</li>
+            <li><a class="btn btn-outline" href="assets/cv-anonyme.pdf" download>Télécharger le CV (PDF)</a></li>
+          </ul>
         </div>
         <form class="contact-form card theme-card grid gap-2" data-animate>
           <div class="form-group flex flex-col gap-1">
