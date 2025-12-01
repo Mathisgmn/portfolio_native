@@ -9,10 +9,10 @@
 </head>
 <body data-theme="light">
   <header class="site-header">
-    <div class="container header-content">
+    <div class="container flex items-center justify-between gap-2 py-2">
       <a class="logo" href="#hero">Portfolio.</a>
-      <div class="header-actions">
-        <button class="theme-toggle" aria-label="Basculer le thème" aria-pressed="false">
+      <div class="flex items-center gap-1">
+        <button class="btn theme-toggle" aria-label="Basculer le thème" aria-pressed="false">
           <span class="theme-label">Mode sombre</span>
         </button>
         <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-menu">
@@ -22,7 +22,7 @@
         </button>
       </div>
       <nav id="main-menu" class="main-nav" aria-label="Navigation principale">
-        <ul>
+        <ul class="flex flex-col gap-1 px-1 pb-2 pt-1 md:flex-row md:gap-3 md:p-0">
           <li><a class="nav-link" href="#hero" data-scroll-to>Accueil</a></li>
           <li><a class="nav-link" href="#about" data-scroll-to>A propos</a></li>
           <li><a class="nav-link" href="#skills" data-scroll-to>Compétences</a></li>
@@ -34,162 +34,148 @@
   </header>
 
   <main>
-    <section id="hero" class="hero" aria-label="Introduction">
-      <div class="container hero-grid">
-        <div class="hero-text" data-animate>
-          <p class="eyebrow">Développeur Front-end</p>
-          <h1>Je conçois des expériences web élégantes et performantes.</h1>
-          <p class="lead">Passionné par les interfaces accessibles, je crée des produits numériques immersifs en JavaScript natif.</p>
-          <div class="cta-group">
+    <section id="hero" class="py-5" aria-label="Introduction">
+      <div class="container grid gap-3 md:grid-cols-2 items-center">
+        <div class="flex flex-col gap-2" data-animate>
+          <p class="eyebrow text-muted">Développeur Front-end</p>
+          <h1 class="hero-title">Je conçois des expériences web élégantes et performantes.</h1>
+          <p class="lead text-muted">Passionné par les interfaces accessibles, je crée des produits numériques immersifs en JavaScript natif.</p>
+          <div class="flex flex-wrap gap-2">
             <a class="btn btn-primary" href="#projects" data-scroll-to>Voir mes projets</a>
             <a class="btn btn-outline" href="#contact" data-scroll-to>Me contacter</a>
           </div>
         </div>
-        <div class="hero-card" data-animate>
-          <div class="card">
-            <div class="card-body">
-              <p class="card-title">Disponible dès maintenant</p>
-              <p>Basé à Lyon, ouvert au full-remote. J'aime transformer les idées en produits clairs et élégants.</p>
-              <ul class="badge-list">
-                <li>SPA natives</li>
-                <li>Accessibilité</li>
-                <li>Animations maîtrisées</li>
-              </ul>
-            </div>
+        <div class="card theme-card" data-animate>
+          <div class="flex flex-col gap-2">
+            <p class="card-title">Disponible dès maintenant</p>
+            <p class="text-muted">Basé à Lyon, ouvert au full-remote. J'aime transformer les idées en produits clairs et élégants.</p>
+            <ul class="badge-list flex flex-wrap gap-1">
+              <li>SPA natives</li>
+              <li>Accessibilité</li>
+              <li>Animations maîtrisées</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="panel" aria-labelledby="about-title">
+    <section id="about" class="py-4" aria-labelledby="about-title">
       <div class="container">
-        <div class="section-heading" data-animate>
-          <p class="eyebrow">A propos</p>
+        <div class="section-heading flex flex-col gap-1" data-animate>
+          <p class="eyebrow text-muted">A propos</p>
           <h2 id="about-title">Construire des expériences utiles</h2>
-          <p>Mon approche est centrée sur l'utilisateur : maquettes accessibles, interactions fluides et performances mesurables.</p>
+          <p class="text-muted">Mon approche est centrée sur l'utilisateur : maquettes accessibles, interactions fluides et performances mesurables.</p>
         </div>
-        <div class="grid-2" data-animate>
-          <article class="info-card">
+        <div class="grid gap-2 md:grid-cols-2" data-animate>
+          <article class="card theme-card h-full flex flex-col gap-1">
             <h3>Philosophie</h3>
-            <p>Chaque fonctionnalité est pensée pour avoir un impact clair. J'écris un code maintenable et documenté afin de faciliter les évolutions.</p>
+            <p class="text-muted">Chaque fonctionnalité est pensée pour avoir un impact clair. J'écris un code maintenable et documenté afin de faciliter les évolutions.</p>
           </article>
-          <article class="info-card">
+          <article class="card theme-card h-full flex flex-col gap-1">
             <h3>Stack de prédilection</h3>
-            <p>JavaScript natif, HTML sémantique et CSS modulaire. J'évite les dépendances inutiles et privilégie la maîtrise des fondamentaux.</p>
+            <p class="text-muted">JavaScript natif, HTML sémantique et CSS modulaire. J'évite les dépendances inutiles et privilégie la maîtrise des fondamentaux.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="panel" aria-labelledby="skills-title">
+    <section id="skills" class="py-4" aria-labelledby="skills-title">
       <div class="container">
-        <div class="section-heading" data-animate>
-          <p class="eyebrow">Compétences</p>
+        <div class="section-heading flex flex-col gap-1" data-animate>
+          <p class="eyebrow text-muted">Compétences</p>
           <h2 id="skills-title">Une boîte à outils complète</h2>
-          <p>De la conception à la mise en production, j'orchestré des parcours utilisateurs cohérents et responsives.</p>
+          <p class="text-muted">De la conception à la mise en production, j'orchestré des parcours utilisateurs cohérents et responsives.</p>
         </div>
-        <div class="skills-grid">
-          <article class="skill" data-animate>
+        <div class="grid gap-2 md:grid-cols-3">
+          <article class="card theme-card h-full flex flex-col gap-1" data-animate>
             <h3>Accessibilité</h3>
-            <p>Navigation clavier, contrastes soignés et hiérarchies logiques pour des interfaces inclusives.</p>
+            <p class="text-muted">Navigation clavier, contrastes soignés et hiérarchies logiques pour des interfaces inclusives.</p>
           </article>
-          <article class="skill" data-animate>
+          <article class="card theme-card h-full flex flex-col gap-1" data-animate>
             <h3>Performance</h3>
-            <p>Optimisation des assets, lazy loading ciblé et animations à 60 fps grâce à des scripts légers.</p>
+            <p class="text-muted">Optimisation des assets, lazy loading ciblé et animations à 60 fps grâce à des scripts légers.</p>
           </article>
-          <article class="skill" data-animate>
+          <article class="card theme-card h-full flex flex-col gap-1" data-animate>
             <h3>Design Systems</h3>
-            <p>Création de bibliothèques réutilisables et cohérentes pour accélérer la livraison de nouveaux modules.</p>
+            <p class="text-muted">Création de bibliothèques réutilisables et cohérentes pour accélérer la livraison de nouveaux modules.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="panel" aria-labelledby="projects-title">
+    <section id="projects" class="py-4" aria-labelledby="projects-title">
       <div class="container">
-        <div class="section-heading" data-animate>
-          <p class="eyebrow">Réalisations</p>
+        <div class="section-heading flex flex-col gap-1" data-animate>
+          <p class="eyebrow text-muted">Réalisations</p>
           <h2 id="projects-title">Des projets concrets</h2>
-          <p>Chaque carte contient un résumé court. Cliquez sur « en savoir plus » pour afficher les détails du projet.</p>
+          <p class="text-muted">Chaque carte contient un résumé court. Cliquez sur « en savoir plus » pour afficher les détails du projet.</p>
         </div>
-        <div class="projects-grid">
-          <article class="project-card" data-animate>
-            <div class="card">
-              <div class="card-body">
-                <div class="project-header">
-                  <div>
-                    <p class="card-title">Plateforme d'événements</p>
-                    <p class="card-subtitle">SPA marketing / réservation</p>
-                  </div>
-                  <span class="tag">JS Vanilla</span>
-                </div>
-                <p class="project-excerpt">Landing immersive avec formulaires interactifs et animations douces.</p>
-                <div class="project-description" id="project-1-desc">
-                  <p>Architecture modulaire, routing client léger, tracking des conversions et optimisation Core Web Vitals.</p>
-                </div>
-                <button class="read-more" type="button" data-target="project-1-desc" aria-expanded="false">En savoir plus</button>
+        <div class="grid gap-2 md:grid-cols-3">
+          <article class="project-card card theme-card flex flex-col gap-2" data-animate>
+            <div class="project-header flex items-center justify-between gap-2">
+              <div>
+                <p class="card-title">Plateforme d'événements</p>
+                <p class="card-subtitle text-muted">SPA marketing / réservation</p>
               </div>
+              <span class="tag">JS Vanilla</span>
             </div>
+            <p class="project-excerpt text-muted">Landing immersive avec formulaires interactifs et animations douces.</p>
+            <div class="project-description" id="project-1-desc">
+              <p>Architecture modulaire, routing client léger, tracking des conversions et optimisation Core Web Vitals.</p>
+            </div>
+            <button class="read-more" type="button" data-target="project-1-desc" aria-expanded="false">En savoir plus</button>
           </article>
 
-          <article class="project-card" data-animate>
-            <div class="card">
-              <div class="card-body">
-                <div class="project-header">
-                  <div>
-                    <p class="card-title">Dashboard analytique</p>
-                    <p class="card-subtitle">Visualisation temps réel</p>
-                  </div>
-                  <span class="tag">Design System</span>
-                </div>
-                <p class="project-excerpt">Cartes synthétiques, filtres dynamiques et theming par utilisateur.</p>
-                <div class="project-description" id="project-2-desc">
-                  <p>Interactions clavier complètes, composants réutilisables, micro-interactions pour signaler les mises à jour.</p>
-                </div>
-                <button class="read-more" type="button" data-target="project-2-desc" aria-expanded="false">En savoir plus</button>
+          <article class="project-card card theme-card flex flex-col gap-2" data-animate>
+            <div class="project-header flex items-center justify-between gap-2">
+              <div>
+                <p class="card-title">Dashboard analytique</p>
+                <p class="card-subtitle text-muted">Visualisation temps réel</p>
               </div>
+              <span class="tag">Design System</span>
             </div>
+            <p class="project-excerpt text-muted">Cartes synthétiques, filtres dynamiques et theming par utilisateur.</p>
+            <div class="project-description" id="project-2-desc">
+              <p>Interactions clavier complètes, composants réutilisables, micro-interactions pour signaler les mises à jour.</p>
+            </div>
+            <button class="read-more" type="button" data-target="project-2-desc" aria-expanded="false">En savoir plus</button>
           </article>
 
-          <article class="project-card" data-animate>
-            <div class="card">
-              <div class="card-body">
-                <div class="project-header">
-                  <div>
-                    <p class="card-title">Assistant d'onboarding</p>
-                    <p class="card-subtitle">Guides interactifs</p>
-                  </div>
-                  <span class="tag">Micro front-end</span>
-                </div>
-                <p class="project-excerpt">Parcours guidés, feedback utilisateur immédiat et sauvegarde des préférences.</p>
-                <div class="project-description" id="project-3-desc">
-                  <p>Intégration multi-applications, support offline léger et personnalisation selon les rôles.</p>
-                </div>
-                <button class="read-more" type="button" data-target="project-3-desc" aria-expanded="false">En savoir plus</button>
+          <article class="project-card card theme-card flex flex-col gap-2" data-animate>
+            <div class="project-header flex items-center justify-between gap-2">
+              <div>
+                <p class="card-title">Assistant d'onboarding</p>
+                <p class="card-subtitle text-muted">Guides interactifs</p>
               </div>
+              <span class="tag">Micro front-end</span>
             </div>
+            <p class="project-excerpt text-muted">Parcours guidés, feedback utilisateur immédiat et sauvegarde des préférences.</p>
+            <div class="project-description" id="project-3-desc">
+              <p>Intégration multi-applications, support offline léger et personnalisation selon les rôles.</p>
+            </div>
+            <button class="read-more" type="button" data-target="project-3-desc" aria-expanded="false">En savoir plus</button>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="panel" aria-labelledby="contact-title">
-      <div class="container contact-grid">
-        <div class="section-heading" data-animate>
-          <p class="eyebrow">Contact</p>
+    <section id="contact" class="py-4" aria-labelledby="contact-title">
+      <div class="container grid gap-3 md:grid-cols-2 items-start">
+        <div class="section-heading flex flex-col gap-1" data-animate>
+          <p class="eyebrow text-muted">Contact</p>
           <h2 id="contact-title">Parlons de votre projet</h2>
-          <p>Le formulaire est volontairement non-fonctionnel pour cette étape. Un message de confirmation simule l'envoi.</p>
+          <p class="text-muted">Le formulaire est volontairement non-fonctionnel pour cette étape. Un message de confirmation simule l'envoi.</p>
         </div>
-        <form class="contact-form" data-animate>
-          <div class="form-group">
+        <form class="contact-form card theme-card grid gap-2" data-animate>
+          <div class="form-group flex flex-col gap-1">
             <label for="name">Nom complet</label>
             <input id="name" name="name" type="text" required placeholder="Jane Doe" />
           </div>
-          <div class="form-group">
+          <div class="form-group flex flex-col gap-1">
             <label for="email">Email</label>
             <input id="email" name="email" type="email" required placeholder="jane@exemple.com" />
           </div>
-          <div class="form-group">
+          <div class="form-group flex flex-col gap-1">
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="4" required placeholder="Parlez-moi de vos besoins"></textarea>
           </div>
@@ -201,9 +187,9 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-content">
+    <div class="container flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
       <p>© 2024 Portfolio natif. Construisons quelque chose de mémorable.</p>
-      <div class="footer-links">
+      <div class="footer-links flex gap-2">
         <a href="#projects" data-scroll-to>Projets</a>
         <a href="#contact" data-scroll-to>Contact</a>
         <a href="#hero" data-scroll-to>Haut de page</a>
