@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Développeur Web</title>
+  <link rel="stylesheet" href="dist/plugo.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light">
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="logo" href="#hero">Portfolio.</a>
+      <div class="header-actions">
+        <button class="theme-toggle" aria-label="Basculer le thème" aria-pressed="false">
+          <span class="theme-label">Mode sombre</span>
+        </button>
+        <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav id="main-menu" class="main-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a class="nav-link" href="#hero" data-scroll-to>Accueil</a></li>
+          <li><a class="nav-link" href="#about" data-scroll-to>A propos</a></li>
+          <li><a class="nav-link" href="#skills" data-scroll-to>Compétences</a></li>
+          <li><a class="nav-link" href="#projects" data-scroll-to>Projets</a></li>
+          <li><a class="nav-link" href="#contact" data-scroll-to>Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero" aria-label="Introduction">
+      <div class="container hero-grid">
+        <div class="hero-text" data-animate>
+          <p class="eyebrow">Développeur Front-end</p>
+          <h1>Je conçois des expériences web élégantes et performantes.</h1>
+          <p class="lead">Passionné par les interfaces accessibles, je crée des produits numériques immersifs en JavaScript natif.</p>
+          <div class="cta-group">
+            <a class="btn btn-primary" href="#projects" data-scroll-to>Voir mes projets</a>
+            <a class="btn btn-outline" href="#contact" data-scroll-to>Me contacter</a>
+          </div>
+        </div>
+        <div class="hero-card" data-animate>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-title">Disponible dès maintenant</p>
+              <p>Basé à Lyon, ouvert au full-remote. J'aime transformer les idées en produits clairs et élégants.</p>
+              <ul class="badge-list">
+                <li>SPA natives</li>
+                <li>Accessibilité</li>
+                <li>Animations maîtrisées</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="panel" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-heading" data-animate>
+          <p class="eyebrow">A propos</p>
+          <h2 id="about-title">Construire des expériences utiles</h2>
+          <p>Mon approche est centrée sur l'utilisateur : maquettes accessibles, interactions fluides et performances mesurables.</p>
+        </div>
+        <div class="grid-2" data-animate>
+          <article class="info-card">
+            <h3>Philosophie</h3>
+            <p>Chaque fonctionnalité est pensée pour avoir un impact clair. J'écris un code maintenable et documenté afin de faciliter les évolutions.</p>
+          </article>
+          <article class="info-card">
+            <h3>Stack de prédilection</h3>
+            <p>JavaScript natif, HTML sémantique et CSS modulaire. J'évite les dépendances inutiles et privilégie la maîtrise des fondamentaux.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="panel" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-heading" data-animate>
+          <p class="eyebrow">Compétences</p>
+          <h2 id="skills-title">Une boîte à outils complète</h2>
+          <p>De la conception à la mise en production, j'orchestré des parcours utilisateurs cohérents et responsives.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill" data-animate>
+            <h3>Accessibilité</h3>
+            <p>Navigation clavier, contrastes soignés et hiérarchies logiques pour des interfaces inclusives.</p>
+          </article>
+          <article class="skill" data-animate>
+            <h3>Performance</h3>
+            <p>Optimisation des assets, lazy loading ciblé et animations à 60 fps grâce à des scripts légers.</p>
+          </article>
+          <article class="skill" data-animate>
+            <h3>Design Systems</h3>
+            <p>Création de bibliothèques réutilisables et cohérentes pour accélérer la livraison de nouveaux modules.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="panel" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-heading" data-animate>
+          <p class="eyebrow">Réalisations</p>
+          <h2 id="projects-title">Des projets concrets</h2>
+          <p>Chaque carte contient un résumé court. Cliquez sur « en savoir plus » pour afficher les détails du projet.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card" data-animate>
+            <div class="card">
+              <div class="card-body">
+                <div class="project-header">
+                  <div>
+                    <p class="card-title">Plateforme d'événements</p>
+                    <p class="card-subtitle">SPA marketing / réservation</p>
+                  </div>
+                  <span class="tag">JS Vanilla</span>
+                </div>
+                <p class="project-excerpt">Landing immersive avec formulaires interactifs et animations douces.</p>
+                <div class="project-description" id="project-1-desc">
+                  <p>Architecture modulaire, routing client léger, tracking des conversions et optimisation Core Web Vitals.</p>
+                </div>
+                <button class="read-more" type="button" data-target="project-1-desc" aria-expanded="false">En savoir plus</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-animate>
+            <div class="card">
+              <div class="card-body">
+                <div class="project-header">
+                  <div>
+                    <p class="card-title">Dashboard analytique</p>
+                    <p class="card-subtitle">Visualisation temps réel</p>
+                  </div>
+                  <span class="tag">Design System</span>
+                </div>
+                <p class="project-excerpt">Cartes synthétiques, filtres dynamiques et theming par utilisateur.</p>
+                <div class="project-description" id="project-2-desc">
+                  <p>Interactions clavier complètes, composants réutilisables, micro-interactions pour signaler les mises à jour.</p>
+                </div>
+                <button class="read-more" type="button" data-target="project-2-desc" aria-expanded="false">En savoir plus</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-animate>
+            <div class="card">
+              <div class="card-body">
+                <div class="project-header">
+                  <div>
+                    <p class="card-title">Assistant d'onboarding</p>
+                    <p class="card-subtitle">Guides interactifs</p>
+                  </div>
+                  <span class="tag">Micro front-end</span>
+                </div>
+                <p class="project-excerpt">Parcours guidés, feedback utilisateur immédiat et sauvegarde des préférences.</p>
+                <div class="project-description" id="project-3-desc">
+                  <p>Intégration multi-applications, support offline léger et personnalisation selon les rôles.</p>
+                </div>
+                <button class="read-more" type="button" data-target="project-3-desc" aria-expanded="false">En savoir plus</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="panel" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="section-heading" data-animate>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Parlons de votre projet</h2>
+          <p>Le formulaire est volontairement non-fonctionnel pour cette étape. Un message de confirmation simule l'envoi.</p>
+        </div>
+        <form class="contact-form" data-animate>
+          <div class="form-group">
+            <label for="name">Nom complet</label>
+            <input id="name" name="name" type="text" required placeholder="Jane Doe" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="jane@exemple.com" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required placeholder="Parlez-moi de vos besoins"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Envoyer</button>
+          <p class="form-feedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© 2024 Portfolio natif. Construisons quelque chose de mémorable.</p>
+      <div class="footer-links">
+        <a href="#projects" data-scroll-to>Projets</a>
+        <a href="#contact" data-scroll-to>Contact</a>
+        <a href="#hero" data-scroll-to>Haut de page</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
